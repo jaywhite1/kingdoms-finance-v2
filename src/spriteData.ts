@@ -15,8 +15,8 @@ const spriteData: { [index: string]: SpriteProps } = {
     },
     player: {
         src: './assets/player.png',
-        frameWidth: 80,
-        frameHeight: 80,
+        frameWidth: 79,
+        frameHeight: 79,
         frameTime: 300,
         sheet: {
             default: [[0, 0]],
