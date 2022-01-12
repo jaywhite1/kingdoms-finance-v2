@@ -5,7 +5,7 @@ import Game from './@core/Game';
 import Scene from './@core/Scene';
 import SceneManager from './@core/SceneManager';
 import useWindowSize from './@core/useWindowSize';
-import OfficeScene from './scenes/OfficeScene';
+import KingdomScene from './scenes/KingdomScene';
 import OtherScene from './scenes/OtherScene';
 import soundData from './soundData';
 import spriteData from './spriteData';
@@ -35,10 +35,10 @@ export default function App() {
             <Global styles={globalStyles} />
             <div css={styles.root(width, height)}>
                 <Game cameraZoom={80}>
-                    <AssetLoader urls={urls} placeholder="Loading assets ...">
-                        <SceneManager defaultScene="office">
-                            <Scene id="office">
-                                <OfficeScene />
+                    <AssetLoader urls={urls} placeholder="Travelling your kingdom ...">
+                        <SceneManager defaultScene="kingdom">
+                            <Scene id="kingdom">
+                                <KingdomScene />
                             </Scene>
                             <Scene id="other">
                                 <OtherScene />

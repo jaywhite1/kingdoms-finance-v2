@@ -14,14 +14,21 @@ import Workstation from '../entities/Workstation';
 import spriteData from '../spriteData';
 
 const mapData = mapDataString(`
-# # # # # # # # # # # # # # # # #
-# · W T # T · · W T · W · · · T #
-# · · · · · · · · · · · · · · o ·
-# o · · # · · · # # # # · · # # #
-# # # # # · · · # W o W · · T W #
-# C C C # · · · T · · · · · · · #
-# o · · · · · · · · · · · · · o #
-# # # # # # # # # # # # # # # # #
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
+· · · · · · · · · · · ·
 `);
 
 const resolveMapTile: TileMapResolver = (type, x, y) => {
@@ -77,7 +84,7 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
     }
 };
 
-export default function OfficeScene() {
+export default function KingdomScene() {
     return (
         <>
             <GameObject name="map">
