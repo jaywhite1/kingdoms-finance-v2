@@ -12,16 +12,24 @@ import Plant from '../entities/Plant';
 import Player from '../entities/Player';
 import Workstation from '../entities/Workstation';
 import GoldMine from '../entities/GoldMine';
+import SulfurMine from '../entities/SulfurMine';
+import GemMine from '../entities/GemMine';
+import CoalMine from '../entities/CoalMine';
+import CrystalMine from '../entities/CrystalMine';
 import spriteData from '../spriteData';
 
 const mapData = mapDataString(`
-······G·········
-······G·········
-······G·········
-······G·········
-······G·········
-················
-················
+···················
+···················
+···················
+·········G·········
+·········H·········
+·········I·········
+·········J·········
+·········K·········
+···················
+···················
+···················
 `);
 
 const resolveMapTile: TileMapResolver = (type, x, y) => {
@@ -49,6 +57,34 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
                 <Fragment key={key}>
                     {floor}
                     <GoldMine {...position} />
+                </Fragment>
+            );
+        case 'H':
+            return (
+                <Fragment key={key}>
+                    {floor}
+                    <GemMine {...position} />
+                </Fragment>
+            );
+        case 'I':
+            return (
+                <Fragment key={key}>
+                    {floor}
+                    <SulfurMine {...position} />
+                </Fragment>
+            );
+        case 'J':
+            return (
+                <Fragment key={key}>
+                    {floor}
+                    <CoalMine {...position} />
+                </Fragment>
+            );
+        case 'K':
+            return (
+                <Fragment key={key}>
+                    {floor}
+                    <CrystalMine {...position} />
                 </Fragment>
             );
         case 'W':
