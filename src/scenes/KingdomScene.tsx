@@ -11,7 +11,7 @@ import PizzaPickup from '../entities/PizzaPickup';
 import Plant from '../entities/Plant';
 import Player from '../entities/Player';
 import Workstation from '../entities/Workstation';
-import GoldMine from '../entities/Goldmine';
+import GoldMine from '../entities/GoldMine';
 import spriteData from '../spriteData';
 
 const mapData = mapDataString(`
