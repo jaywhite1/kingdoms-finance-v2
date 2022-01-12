@@ -15,13 +15,13 @@ const spriteData: { [index: string]: SpriteProps } = {
     },
     player: {
         src: './assets/player.png',
-        frameWidth: 70,
-        frameHeight: 70,
+        frameWidth: 80,
+        frameHeight: 80,
         frameTime: 300,
         sheet: {
             default: [[0, 0]],
             walk: [
-                [0, 1],
+                [1, 1],
                 [2, 2],
             ],
             action: [
@@ -42,6 +42,15 @@ const spriteData: { [index: string]: SpriteProps } = {
             'coffee-machine': [[2, 1]],
             'coffee-machine-empty': [[3, 1]],
             pizza: [[4, 1]],
+            plant: [[0, 2]],
+        },
+    },
+    buildings: {
+        src: './assets/GoldMine(Frame 1).png',
+        frameWidth: 32,
+        frameHeight: 32,
+        sheet: {
+            goldmine: [[0, 0]],
             plant: [[0, 2]],
         },
     },

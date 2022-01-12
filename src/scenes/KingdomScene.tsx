@@ -11,24 +11,17 @@ import PizzaPickup from '../entities/PizzaPickup';
 import Plant from '../entities/Plant';
 import Player from '../entities/Player';
 import Workstation from '../entities/Workstation';
+import GoldMine from '../entities/Goldmine';
 import spriteData from '../spriteData';
 
 const mapData = mapDataString(`
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
-· · · · · · · · · · · ·
+······G·········
+······G·········
+······G·········
+······G·········
+······G·········
+················
+················
 `);
 
 const resolveMapTile: TileMapResolver = (type, x, y) => {
@@ -51,12 +44,12 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
                     <PizzaPickup {...position} />
                 </Fragment>
             );
-        case '#':
+        case 'G':
             return (
-                <GameObject key={key} {...position} layer="wall">
-                    <Collider />
-                    <Sprite {...spriteData.objects} state="wall" />
-                </GameObject>
+                <Fragment key={key}>
+                    {floor}
+                    <GoldMine {...position} />
+                </Fragment>
             );
         case 'W':
             return (
@@ -96,7 +89,7 @@ export default function KingdomScene() {
                 <Interactable />
                 <ScenePortal name="exit" enterDirection={[-1, 0]} target="other/start" />
             </GameObject>
-            <Player x={6} y={3} />
+            <Player x={2} y={2} />
         </>
     );
 }
