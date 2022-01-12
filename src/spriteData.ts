@@ -15,13 +15,13 @@ const spriteData: { [index: string]: SpriteProps } = {
     },
     player: {
         src: './assets/player.png',
-        frameWidth: 20,
-        frameHeight: 20,
+        frameWidth: 70,
+        frameHeight: 70,
         frameTime: 300,
         sheet: {
-            default: [[0, 2]],
+            default: [[0, 0]],
             walk: [
-                [1, 2],
+                [0, 1],
                 [2, 2],
             ],
             action: [
