@@ -17,7 +17,7 @@ function GoldmineScript() {
     useGameObjectEvent<InteractionEvent>('interaction', () => {
         if (fillState.current) {
             fillState.current = false;
-            getComponent<SpriteRef>('Sprite').setState('coffee-machine-empty');
+            getComponent<SpriteRef>('Sprite').setState('goldmine-empty');
             playSfx();
         }
     });
@@ -28,7 +28,7 @@ function GoldmineScript() {
 export default function GoldMine(props: GameObjectProps) {
     return (
         <GameObject {...props}>
-            <Sprite {...spriteData.buildings} state="goldmine" />
+            <Sprite {...spriteData.buildings} state="goldmine-full" />
             <Collider />
             <Interactable />
             <GoldmineScript />

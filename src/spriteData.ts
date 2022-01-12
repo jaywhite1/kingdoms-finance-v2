@@ -46,12 +46,13 @@ const spriteData: { [index: string]: SpriteProps } = {
         },
     },
     buildings: {
-        src: './assets/GoldMine(Frame 1).png',
-        frameWidth: 32,
-        frameHeight: 32,
+        src: './assets/buildings/Goldmine/GoldMine.png',
+        frameWidth: 128,
+        frameHeight: 128,
         sheet: {
             goldmine: [[0, 0]],
-            plant: [[0, 2]],
+            'goldmine-full': [[0, 0]],
+            'goldmine-empty': [[1, 0]],
         },
     },
     footstep: {
