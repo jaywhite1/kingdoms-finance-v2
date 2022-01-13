@@ -51,9 +51,7 @@ const grassTypes = [
     { id: 'grass4', weight: 5 },
     { id: 'grass5', weight: 3 },
 ];
-
 let grass;
-
 const resolveMapTile: TileMapResolver = (type, x, y) => {
     grass = getWeightedRand(grassTypes);
     const key = `${x}-${y}`;

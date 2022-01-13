@@ -19,7 +19,7 @@ export default function globalStyles() {
             padding: 0;
             overflow: hidden;
             color: white;
-            background: black;
+            background: #249FDE;
         }
     `;
 }
