@@ -23,7 +23,7 @@ export default function findPath({ from, to, map }: PathOptions) {
             if (path != null) result = path.slice(1);
         });
     } catch {
-        console.log('error');
+        // error
     }
     easystar.calculate();
     return result;

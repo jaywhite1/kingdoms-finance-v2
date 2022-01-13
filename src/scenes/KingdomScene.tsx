@@ -32,7 +32,7 @@ import spriteData from '../spriteData';
 // `);
 const mapData = mapDataString(`
 ··················
-··················
+·················
 ··················
 ········G·········
 ········H·········
@@ -40,13 +40,12 @@ const mapData = mapDataString(`
 ········K·········
 ··················
 ··················
-··················
+·················
 `);
 const grasstypes = ['grass1', 'grass2', 'grass3', 'grass4', 'grass5'];
 let grass;
 const resolveMapTile: TileMapResolver = (type, x, y) => {
     grass = grasstypes[Math.floor(Math.random() * grasstypes.length)];
-    console.log(grass);
     const key = `${x}-${y}`;
     const position = { x, y };
     const floor = (
@@ -54,7 +53,6 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
             <Sprite {...spriteData.land} state={grass} />
         </GameObject>
     );
-
     switch (type) {
         case '·':
             return floor;
@@ -100,27 +98,7 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
                     <CrystalMine {...position} />
                 </Fragment>
             );
-        case 'W':
-            return (
-                <Fragment key={key}>
-                    {floor}
-                    <Workstation {...position} />
-                </Fragment>
-            );
-        case 'C':
-            return (
-                <Fragment key={key}>
-                    {floor}
-                    <CoffeeMachine {...position} />
-                </Fragment>
-            );
-        case 'T':
-            return (
-                <Fragment key={key}>
-                    {floor}
-                    <Plant {...position} />
-                </Fragment>
-            );
+
         default:
             return null;
     }

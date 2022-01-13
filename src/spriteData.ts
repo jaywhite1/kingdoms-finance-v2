@@ -56,6 +56,18 @@ const spriteData: { [index: string]: SpriteProps } = {
             grass5: [[4, 0]],
         },
     },
+    road: {
+        src: './assets/land/Road.png',
+        frameWidth: 16,
+        frameHeight: 16,
+        sheet: {
+            grass1: [[0, 0]],
+            grass2: [[1, 0]],
+            grass3: [[2, 0]],
+            grass4: [[3, 0]],
+            grass5: [[4, 0]],
+        },
+    },
     mines: {
         src: './assets/buildings/Mines.png',
         frameWidth: 128,
