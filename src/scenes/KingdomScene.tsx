@@ -32,13 +32,15 @@ const mapData = mapDataString(`
 ···················
 `);
 
+const grasstypes = ['grass-1', 'grass-2', 'grass-3', 'grass-4', 'grass-5'];
+let grass;
 const resolveMapTile: TileMapResolver = (type, x, y) => {
+    grass = grasstypes[Math.floor(Math.random() * grasstypes.length)];
     const key = `${x}-${y}`;
     const position = { x, y };
-
     const floor = (
         <GameObject key={key} {...position} layer="ground">
-            <Sprite {...spriteData.land} state="floor" />
+            <Sprite {...spriteData.land} state={grass} />
         </GameObject>
     );
 
