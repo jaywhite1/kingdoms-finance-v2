@@ -33,7 +33,7 @@ import getWeightedRand from '../utils/mathUtils';
 // `);
 const mapData = mapDataString(`
 ··················
-··················
+·················
 ··················
 ········G·········
 ········H·········
@@ -41,7 +41,7 @@ const mapData = mapDataString(`
 ········K·········
 ··················
 ··················
-··················
+·················
 `);
 
 const grassTypes = [
@@ -56,8 +56,6 @@ let grass;
 
 const resolveMapTile: TileMapResolver = (type, x, y) => {
     grass = getWeightedRand(grassTypes);
-
-    console.log(grass);
     const key = `${x}-${y}`;
     const position = { x, y };
     const floor = (
@@ -65,7 +63,6 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
             <Sprite {...spriteData.land} state={grass} />
         </GameObject>
     );
-
     switch (type) {
         case '·':
             return floor;
@@ -111,27 +108,7 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
                     <CrystalMine {...position} />
                 </Fragment>
             );
-        case 'W':
-            return (
-                <Fragment key={key}>
-                    {floor}
-                    <Workstation {...position} />
-                </Fragment>
-            );
-        case 'C':
-            return (
-                <Fragment key={key}>
-                    {floor}
-                    <CoffeeMachine {...position} />
-                </Fragment>
-            );
-        case 'T':
-            return (
-                <Fragment key={key}>
-                    {floor}
-                    <Plant {...position} />
-                </Fragment>
-            );
+
         default:
             return null;
     }
