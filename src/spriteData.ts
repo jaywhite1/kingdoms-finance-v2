@@ -51,10 +51,10 @@ const spriteData: { [index: string]: SpriteProps } = {
         sheet: {
             floor: [[0, 0]],
             'grass-1': [[0, 0]],
-            'grass-2': [[0, 1]],
-            'grass-3': [[0, 2]],
-            'grass-4': [[0, 3]],
-            'grass-5': [[0, 4]],
+            'grass-2': [[1, 0]],
+            'grass-3': [[2, 0]],
+            'grass-4': [[3, 0]],
+            'grass-5': [[4, 0]],
         },
     },
     mines: {
