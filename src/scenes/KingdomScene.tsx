@@ -17,6 +17,7 @@ import GemMine from '../entities/GemMine';
 import CoalMine from '../entities/CoalMine';
 import CrystalMine from '../entities/CrystalMine';
 import spriteData from '../spriteData';
+import getWeightedRand from '../utils/mathUtils';
 
 // const mapData = mapDataString(`
 // ······················
@@ -42,10 +43,19 @@ const mapData = mapDataString(`
 ··················
 ·················
 `);
-const grasstypes = ['grass1', 'grass2', 'grass3', 'grass4', 'grass5'];
+
+const grassTypes = [
+    { id: 'grass1', weight: 30 },
+    { id: 'grass2', weight: 7 },
+    { id: 'grass3', weight: 30 },
+    { id: 'grass4', weight: 5 },
+    { id: 'grass5', weight: 3 },
+];
+
 let grass;
+
 const resolveMapTile: TileMapResolver = (type, x, y) => {
-    grass = grasstypes[Math.floor(Math.random() * grasstypes.length)];
+    grass = getWeightedRand(grassTypes);
     const key = `${x}-${y}`;
     const position = { x, y };
     const floor = (
