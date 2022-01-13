@@ -2,6 +2,7 @@ node_modules/
 build/
 package/
 # generated files by confy
+.env
 /babel.config.js
 /.eslintrc*
 /.prettierrc*
