@@ -25,7 +25,7 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
         case '·':
             return (
                 <GameObject key={key} {...position} layer="ground">
-                    <Sprite {...spriteData.objects} state="floor" />
+                    <Sprite {...spriteData.objects} state="grass1" />
                 </GameObject>
             );
         case '#':

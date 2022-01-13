@@ -18,24 +18,35 @@ import CoalMine from '../entities/CoalMine';
 import CrystalMine from '../entities/CrystalMine';
 import spriteData from '../spriteData';
 
+// const mapData = mapDataString(`
+// ······················
+// ·····················
+// ············G········
+// ·············H·······
+// ·············I·······
+// ·······K·············
+// ····················
+// ···················
+// ···················
+// ···················
+// `);
 const mapData = mapDataString(`
-···················
-···················
-···················
-·········G·········
-·········H·········
-·········I·········
-·········J·········
-·········K·········
-···················
-···················
-···················
+··················
+··················
+··················
+········G·········
+········H·········
+········I·········
+········K·········
+··················
+··················
+··················
 `);
-
-const grasstypes = ['grass-1', 'grass-2', 'grass-3', 'grass-4', 'grass-5'];
+const grasstypes = ['grass1', 'grass2', 'grass3', 'grass4', 'grass5'];
 let grass;
 const resolveMapTile: TileMapResolver = (type, x, y) => {
     grass = grasstypes[Math.floor(Math.random() * grasstypes.length)];
+    console.log(grass);
     const key = `${x}-${y}`;
     const position = { x, y };
     const floor = (
@@ -121,11 +132,6 @@ export default function KingdomScene() {
             <GameObject name="map">
                 <ambientLight />
                 <TileMap data={mapData} resolver={resolveMapTile} definesMapSize />
-            </GameObject>
-            <GameObject x={16} y={5}>
-                <Collider />
-                <Interactable />
-                <ScenePortal name="exit" enterDirection={[-1, 0]} target="other/start" />
             </GameObject>
             <Player x={2} y={2} />
         </>
