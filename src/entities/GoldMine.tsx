@@ -28,7 +28,7 @@ function GoldmineScript() {
 export default function GoldMine(props: GameObjectProps) {
     return (
         <GameObject {...props}>
-            <Sprite {...spriteData.buildings} state="goldmine-full" />
+            <Sprite {...spriteData.mines} state="goldmine-full" />
             <Collider />
             <Interactable />
             <GoldmineScript />

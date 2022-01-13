@@ -28,7 +28,7 @@ function SulfurMineScript() {
 export default function SulfurMine(props: GameObjectProps) {
     return (
         <GameObject {...props}>
-            <Sprite {...spriteData.buildings} state="sulfurmine-full" />
+            <Sprite {...spriteData.mines} state="sulfurmine-full" />
             <Collider />
             <Interactable />
             <SulfurMineScript />

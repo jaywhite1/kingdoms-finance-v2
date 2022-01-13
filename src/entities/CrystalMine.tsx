@@ -28,7 +28,7 @@ function CrystalMineScript() {
 export default function CrystalMine(props: GameObjectProps) {
     return (
         <GameObject {...props}>
-            <Sprite {...spriteData.buildings} state="crystalmine-full" />
+            <Sprite {...spriteData.mines} state="crystalmine-full" />
             <Collider />
             <Interactable />
             <CrystalMineScript />

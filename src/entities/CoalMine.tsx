@@ -28,7 +28,7 @@ function CoalMineScript() {
 export default function CoalMine(props: GameObjectProps) {
     return (
         <GameObject {...props}>
-            <Sprite {...spriteData.buildings} state="coalmine-full" />
+            <Sprite {...spriteData.mines} state="coalmine-full" />
             <Collider />
             <Interactable />
             <CoalMineScript />

@@ -28,7 +28,7 @@ function GemMineScript() {
 export default function GemMine(props: GameObjectProps) {
     return (
         <GameObject {...props}>
-            <Sprite {...spriteData.buildings} state="gemmine-full" />
+            <Sprite {...spriteData.mines} state="gemmine-full" />
             <Collider />
             <Interactable />
             <GemMineScript />

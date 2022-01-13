@@ -1,5 +1,6 @@
 import { css, Global } from '@emotion/core';
 import React from 'react';
+import Modal from 'react-bootstrap/Modal';
 import AssetLoader from './@core/AssetLoader';
 import Game from './@core/Game';
 import Scene from './@core/Scene';
@@ -32,10 +33,13 @@ export default function App() {
 
     return (
         <>
+            <Modal>
+                <p>hello</p>
+            </Modal>
             <Global styles={globalStyles} />
             <div css={styles.root(width, height)}>
                 <Game cameraZoom={80}>
-                    <AssetLoader urls={urls} placeholder="Travelling your kingdom ...">
+                    <AssetLoader urls={urls} placeholder="Travelling to your kingdom ...">
                         <SceneManager defaultScene="kingdom">
                             <Scene id="kingdom">
                                 <KingdomScene />

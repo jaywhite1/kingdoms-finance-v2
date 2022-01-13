@@ -38,7 +38,7 @@ const resolveMapTile: TileMapResolver = (type, x, y) => {
 
     const floor = (
         <GameObject key={key} {...position} layer="ground">
-            <Sprite {...spriteData.objects} state="floor" />
+            <Sprite {...spriteData.land} state="floor" />
         </GameObject>
     );
 

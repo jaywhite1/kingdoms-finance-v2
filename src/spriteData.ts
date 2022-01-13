@@ -35,7 +35,6 @@ const spriteData: { [index: string]: SpriteProps } = {
         frameWidth: 20,
         frameHeight: 20,
         sheet: {
-            floor: [[0, 0]],
             wall: [[1, 0]],
             'workstation-1': [[0, 1]],
             'workstation-2': [[1, 1]],
@@ -45,7 +44,20 @@ const spriteData: { [index: string]: SpriteProps } = {
             plant: [[0, 2]],
         },
     },
-    buildings: {
+    land: {
+        src: './assets/land/Land.png',
+        frameWidth: 16,
+        frameHeight: 16,
+        sheet: {
+            floor: [[0, 0]],
+            'grass-1': [[0, 0]],
+            'grass-2': [[0, 1]],
+            'grass-3': [[0, 2]],
+            'grass-4': [[0, 3]],
+            'grass-5': [[0, 4]],
+        },
+    },
+    mines: {
         src: './assets/buildings/Mines.png',
         frameWidth: 128,
         frameHeight: 128,
