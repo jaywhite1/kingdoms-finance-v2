@@ -15,34 +15,24 @@ import globalStyles from './dapp/styles/global';
 import Modal from "react-bootstrap/Modal";
 import { useService } from "@xstate/react";
 
-// import { Banner } from "./dapp/components/ui/HalveningBanner";
-// import {
-//   service,
-//   Context,
-//   BlockchainEvent,
-//   BlockchainState,
-// } from "./machine";
+import {
+  service,
+  Context,
+  BlockchainEvent,
+  BlockchainState,
+} from "./machine";
 
-// import { Donation } from "./dapp/types/contract";
+import {
 
-// import {
-//   Charity,
-//   Connecting,
-//   Welcome,
-//   Creating,
-//   Saving,
-//   Error,
-//   TimerComplete,
-//   Unsupported,
-//   SaveError,
-//   GasWarning,
-// } from "./dapp/components/ui/modals";
-
-// import Farm from "./dapp/components/farm/Farm";
-
-// import { Crafting } from "./dapp/components/ui/modals/Crafting";
-//
-
+  Welcome,
+  // Creating,
+  // Saving,
+  // Error,
+  // TimerComplete,
+  // Unsupported,
+  // SaveError,
+  // GasWarning,
+} from "./dapp/components/ui/modals";
 
 const styles = {
     root: (width: number, height: number) => css`
@@ -63,13 +53,23 @@ const urls = [
 export default function App() {
     const [width, height] = useWindowSize();
 
+    const [machineState, send] = useService<
+      Context,
+      BlockchainEvent,
+      BlockchainState
+    >(service);
+    
+    const getStarted = () => {
+      send("GET_STARTED");
+    };
+
+
     return (
         <>
-            <Modal>
-                <p>hello</p>
-            </Modal>
+          <Modal centered show={machineState.matches("initial")}>
+            <Welcome onGetStarted={getStarted} />
+          </Modal>
             <Global styles={globalStyles} />
-            <button type="button">Connect to wallet</button>
             <div css={styles.root(width, height)}>
                 <Game cameraZoom={80}>
                     <AssetLoader urls={urls} placeholder="Travelling to your kingdom ...">
