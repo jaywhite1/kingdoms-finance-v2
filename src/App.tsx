@@ -1,48 +1,16 @@
 import { css, Global } from '@emotion/core';
 import React from 'react';
-import AssetLoader from './dapp/@core/AssetLoader';
-import Game from './dapp/@core/Game';
-import Scene from './dapp/@core/Scene';
-import SceneManager from './dapp/@core/SceneManager';
-import useWindowSize from './dapp/@core/useWindowSize';
-import KingdomScene from './dapp/scenes/KingdomScene';
-import OtherScene from './dapp/scenes/OtherScene';
-import soundData from './dapp/soundData';
-import spriteData from './dapp/spriteData';
-import globalStyles from './dapp/styles/global';
-
-
-import Modal from "react-bootstrap/Modal";
-import { useService } from "@xstate/react";
-
-// import { Banner } from "./dapp/components/ui/HalveningBanner";
-// import {
-//   service,
-//   Context,
-//   BlockchainEvent,
-//   BlockchainState,
-// } from "./machine";
-
-// import { Donation } from "./dapp/types/contract";
-
-// import {
-//   Charity,
-//   Connecting,
-//   Welcome,
-//   Creating,
-//   Saving,
-//   Error,
-//   TimerComplete,
-//   Unsupported,
-//   SaveError,
-//   GasWarning,
-// } from "./dapp/components/ui/modals";
-
-// import Farm from "./dapp/components/farm/Farm";
-
-// import { Crafting } from "./dapp/components/ui/modals/Crafting";
-//
-
+import Modal from 'react-bootstrap/Modal';
+import AssetLoader from './@core/AssetLoader';
+import Game from './@core/Game';
+import Scene from './@core/Scene';
+import SceneManager from './@core/SceneManager';
+import useWindowSize from './@core/useWindowSize';
+import KingdomScene from './scenes/KingdomScene';
+import OtherScene from './scenes/OtherScene';
+import soundData from './soundData';
+import spriteData from './spriteData';
+import globalStyles from './styles/global';
 
 const styles = {
     root: (width: number, height: number) => css`
@@ -69,7 +37,6 @@ export default function App() {
                 <p>hello</p>
             </Modal>
             <Global styles={globalStyles} />
-            <button type="button">Connect to wallet</button>
             <div css={styles.root(width, height)}>
                 <Game cameraZoom={80}>
                     <AssetLoader urls={urls} placeholder="Travelling to your kingdom ...">
