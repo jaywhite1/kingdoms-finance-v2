@@ -43,6 +43,8 @@ module.exports = {
             compilerOptions: {
                 skipLibCheck: true,
                 downlevelIteration: true,
+                resolveJsonModule: true,
+
             },
         },
     }),
